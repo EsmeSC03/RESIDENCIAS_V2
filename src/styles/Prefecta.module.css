@@ -1,0 +1,160 @@
+/* Contenedor principal */
+.container-fluid {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    max-width: 1200px;
+    height: 100vh;
+    padding: 20px;
+    box-sizing: border-box;
+    background: linear-gradient(to right, #f0f2f5, #e8ebf0);
+}
+
+/* Encabezado */
+.header {
+    background-color: #183e7f;
+    color: rgb(255, 255, 255);
+    width: 100%;
+    text-align: center;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(242, 242, 255, 0.1);
+    position: relative;
+}
+
+.header h1 {
+    font-weight: 600;
+    font-size: 28px;
+    margin: 0;
+    color: rgb(255, 255, 255);
+}
+
+/* Botón de Salir */
+.btnLogout {
+    background-color: #fafafa; /* Color azul*/
+    color: #183e7f;
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    padding: 8px 12px;
+    border-radius: 5px;
+    font-size: 14px;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    text-decoration: none;
+    transition: background-color 0.3s, transform 0.2s;
+}
+
+.btnLogout:visited,
+.btnLogout:link,
+.btnLogout:active {
+    color: white;
+    background-color: #f44336;
+}
+
+.btnLogout:hover {
+    background-color: #ff0000;
+    transform: scale(1.05);
+}
+
+/* Contenedor de tabla */
+.table-container {
+    width: 100%;
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 10px;
+}
+
+/* Estilos de tabla */
+.table {
+    width: 100%;
+    border-spacing: 0 15px;
+    background-color: white;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
+   
+}
+
+.table thead th {
+    background-color: #183e7f;
+    color: white;
+    padding: 15px;
+    font-size: 18px;
+    text-align: center;
+}
+
+.table tbody {
+    background-color: #d3d3d3;  /* Gris claro para el fondo de las filas */
+}
+
+.table tbody tr {
+    background-color: #d3d3d3;  /* Gris claro */
+}
+
+
+
+/* Estados de la celda */
+.estadoCelda {
+    text-align: center;
+    font-size: 24px;
+    cursor: pointer;
+    background-color: #d3d3d3;  
+
+}
+
+.presente {
+    background-color: #d4edda;
+    color: #155724;
+}
+
+.ausente {
+    background-color: #f8d7da;
+    color: #721c24;
+}
+
+.tarde {
+    background-color: #fff3cd;
+    color: #856404;
+}
+
+/* Grupo de botones */
+.btnGroup {
+    display: flex;
+    justify-content: center;
+    gap: 8px;
+}
+
+/* Estilos de botones circulares */
+.btn-circle {
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    font-size: 18px;
+    transition: background-color 0.3s, transform 0.3s;
+}
+
+.btn-success {
+    background-color: #4caf50;
+}
+
+.btn-danger {
+    background-color: #f44336;
+}
+
+.btn-warning {
+    background-color: #ff9800;
+}
+
+.btn-circle:hover {
+    transform: scale(1.1);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
