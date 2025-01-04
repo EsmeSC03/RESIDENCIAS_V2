@@ -1,0 +1,27 @@
+/* HR.module.css */
+.hrPage {
+    background-color: #f4f4f4;
+  }
+  
+  .navbar {
+    background-color: #003366;
+  }
+  
+  .navbar a {
+    color: white;
+  }
+  
+  .card-header {
+    font-size: 18px;
+    font-weight: bold;
+  }
+  
+  .card {
+    margin: 20px 0;
+  }
+  
+  .charts {
+    display: flex;
+    justify-content: space-around;
+  }
+  

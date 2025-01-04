@@ -1,0 +1,575 @@
+.Admin-body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.container {
+    display: flex;
+    height: 100vh;
+}
+
+.header {
+    background-color: #2C2C33;
+    padding: 10px 20px;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    position: relative;
+    height: 30px;
+}
+
+.fa-user-circle {
+    font-size: 30px;
+}
+
+/* Estilos del Sidebar */
+.sidebar {
+    background-color: #2C2C33;
+    color: white;
+    width: 250px;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    min-height: 100vh;
+    /* Asegura que cubra toda la pantalla */
+}
+
+.sidebar-header h2 {
+    font-size: 18px;
+    margin-bottom: 20px;
+    text-align: center;
+    color: white;
+}
+
+.menu {
+    list-style: none;
+    padding: 0;
+}
+
+.menu li {
+    margin: 15px 0;
+}
+
+.menu li a {
+    text-decoration: none;
+    color: white;
+    font-size: 20px;
+    display: flex;
+    align-items: center;
+    padding: 20px;
+    transition: background-color 0.3s;
+}
+
+.menu li a i {
+    margin-right: 15px;
+}
+
+.menu a:hover {
+    background-color: #003C5D;
+    text-decoration: none;
+}
+
+/* Botón del menú para pantallas pequeñas */
+.menu-toggle {
+    display: none;
+    font-size: 30px;
+    color: white;
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    cursor: pointer;
+}
+
+@media (max-width: 768px) {
+    .sidebar {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        left: -100%;
+        transition: left 0.3s ease;
+    }
+
+    .sidebar.active {
+        left: 0;
+    }
+
+    .menu-toggle {
+        display: block;
+    }
+}
+
+
+
+.main-content {
+    flex: 5;
+    background-color: #F4F4F4;
+    /*   padding: 20px;*/
+}
+
+.user-profile {
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    color: white;
+}
+
+.user-profile i {
+    margin-right: 8px;
+}
+
+.dropdown {
+    display: none;
+    position: absolute;
+    background-color: #fff;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+    border-radius: 4px;
+    z-index: 1000;
+    right: 10px;
+}
+
+.dropdown.show {
+    display: block;
+}
+
+.dropdown-item {
+    padding: 10px;
+    text-decoration: none;
+    color: #333;
+    display: flex;
+    align-items: center;
+}
+
+.dropdown-item i {
+    margin-right: 8px;
+}
+
+.statistics {
+    display: flex;
+    justify-content: space-around;
+    margin: 20px 0;
+}
+
+.stat {
+    background-color: #fff;
+    text-align: center;
+    padding: 20px;
+    border-radius: 8px;
+    width: 20%;
+}
+
+.stat.green {
+    background-color: #4CAF50;
+    color: white;
+}
+
+.stat.yellow {
+    background-color: #FFEB3B;
+    color: rgb(255, 255, 255);
+}
+
+.stat.red {
+    background-color: #ff1100;
+    color: white;
+}
+
+
+
+
+
+/* Responsive */
+@media (max-width: 768px) {
+    .container {
+        flex-direction: column;
+    }
+
+    .sidebar {
+        position: absolute;
+        left: -200px;
+        width: 200px;
+        height: 100vh;
+    }
+
+    .sidebar.active {
+        left: 0;
+    }
+
+    .sidebar-toggle {
+        display: block;
+        position: absolute;
+        top: 10px;
+        left: 10px;
+        cursor: pointer;
+        z-index: 100;
+    }
+
+    .menu-toggle {
+        display: block;
+    }
+
+    .main-content {
+        margin-left: 0;
+    }
+}
+
+.charts {
+    display: flex;
+    justify-content: space-around;
+    /* Ajusta la separación entre las gráficas */
+}
+
+.chart {
+    width: 45%;
+    /* Puedes ajustar el ancho de las gráficas */
+}
+
+/**********************Estilos para la parte de asignacion de recorrido******************************8*/
+
+.asignacion-recorrido {
+    display: block;
+    padding: 20px;
+    font-family: Arial, sans-serif;
+  }
+  
+  /* Encabezado */
+  .encabezado {
+    background-color: #333;
+    color: yellow;
+    text-align: center;
+    padding: 10px;
+    font-size: 20px;
+    font-weight: bold;
+  }
+  
+  /* Botones de Nombre */
+  .botones-nombre {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 20px;
+    gap: 10px;
+  }
+  
+  .boton {
+    background-color: #2e6da4;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    border-radius: 5px;
+  }
+  
+  .boton:hover {
+    background-color: #245d89;
+  }
+  
+  /* Opciones de Área */
+  .opciones-area {
+    margin-top: 20px;
+    text-align: left;
+    padding: 10px 20px;
+  }
+  
+  .opcion {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 10px;
+  }
+  
+  .checkbox {
+    width: 20px;
+    height: 20px;
+    cursor: pointer;
+  }
+
+/*************************Seccion de docentes***************************/
+.docentes-section {
+
+    padding: auto;
+    margin-top: 50px;
+    font-family: Arial, sans-serif;
+    text-align: center;
+    border-radius: 10px;
+
+
+}
+
+.docentes-section input {
+    width: 90%;
+    padding: 5px;
+    border-radius: 15px;
+    margin-top: 10px;
+
+}
+
+table {
+    background-color: white;
+    margin-top: 50px;
+    table-layout: fixed;
+    width: 100%;
+    border-collapse: collapse;
+
+}
+
+tr td {
+    border-bottom: 2px solid #ccc;
+    padding: 9px;
+}
+
+th {
+    border-bottom: 2px solid #ccc;
+    padding: 9px;
+}
+input[type=text], input[type=password] {
+width: 80%;
+padding: 12px 20px;
+margin: 8px 0;
+display: block;
+border: 1px solid #ccc;
+box-sizing: border-box;
+border-radius: 5px;
+}
+
+
+
+.pagination {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 20px;
+  }
+  
+  .pagination button {
+    background-color: #4CAF50;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    cursor: pointer;
+    margin: 0 10px;
+  }
+  
+  .pagination button:disabled {
+    background-color: #ccc;
+    cursor: not-allowed;
+  }
+  
+  .pagination span {
+    font-size: 16px;
+    margin: 0 10px;
+  }
+
+
+
+
+  .asignacion-recorrido {
+    padding: 30px;
+    max-width: 100%;
+    box-sizing: border-box;
+  }
+  
+  .asignacion-recorrido h2 {
+    text-align: center;
+    font-size: 28px;
+    font-weight: bold;
+    margin-bottom: 20px;
+    color: #333;
+  }
+  
+  .form-group {
+    margin-bottom: 20px;
+  }
+  
+  .form-group label {
+    display: block;
+    font-size: 16px;
+    margin-bottom: 5px;
+    color: #555;
+  }
+  
+  .form-group select,
+  .form-group input {
+    width: 100%;
+    padding: 12px;
+    font-size: 14px;
+    border-radius: 8px;
+    border: 1px solid #ccc;
+  }
+  
+  .areas-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: space-evenly;
+  }
+  
+  .area-card {
+    width: calc(33% - 20px); /* 3 columnas, con un espacio de 20px */
+    background-color: #f4f4f9;
+    padding: 20px;
+    border-radius: 8px;
+    border: 1px solid #ddd;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: transform 0.3s ease;
+  }
+  
+  .area-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  }
+  
+  .area-card input {
+    margin-right: 10px;
+  }
+  
+  .area-label {
+    font-size: 16px;
+    font-weight: 600;
+    color: #333;
+  }
+  
+
+
+
+
+
+
+
+  /* Contenedor principal */
+.asignacion-container {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #f9f9f9;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    font-family: Arial, sans-serif;
+  }
+  
+  /* Título */
+  .asignacion-title {
+    font-size: 1.8rem;
+    font-weight: bold;
+    color: #333;
+    text-align: center;
+    margin-bottom: 20px;
+  }
+  
+  /* Fila */
+  .asignacion-row {
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+    flex-wrap: wrap;
+  }
+  
+  /* Columna */
+  .asignacion-column {
+    flex: 1;
+    min-width: 280px;
+    display: flex;
+    flex-direction: column;
+  }
+  
+  /* Etiquetas */
+  .asignacion-column label {
+    font-size: 0.9rem;
+    font-weight: bold;
+    margin-bottom: 8px;
+    color: #555;
+  }
+  
+  /* Select */
+  .asignacion-select {
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 1rem;
+  }
+  
+  /* Input de fecha */
+  .asignacion-input {
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 1rem;
+  }
+  
+  /* Contenedor de áreas */
+  .asignacion-areas {
+    margin-top: 20px;
+  }
+  
+  .asignacion-areas-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+  }
+  
+  /* Tarjetas de área */
+  .asignacion-area-card {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    background-color: #fff;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+  }
+  
+  .asignacion-area-label {
+    font-size: 0.9rem;
+    color: #333;
+  }
+  
+  /* Asignaciones */
+  .asignacion-assignments {
+    margin-top: 30px;
+    background-color: #fff;
+    padding: 15px;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  }
+  
+  .asignacion-assignments h3 {
+    font-size: 1.2rem;
+    margin-bottom: 10px;
+    color: #333;
+  }
+  
+  .asignacion-assignment-item {
+    font-size: 0.9rem;
+    color: #555;
+    margin-bottom: 8px;
+    line-height: 1.5;
+  }
+  
+  /* Botón */
+  .asignacion-button {
+    display: block;
+    width: 100%;
+    max-width: 200px;
+    margin: 20px auto 0;
+    padding: 10px 20px;
+    background-color: #007bff;
+    color: #fff;
+    font-size: 1rem;
+    font-weight: bold;
+    text-align: center;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+  }
+  
+  .asignacion-button:hover {
+    background-color: #0056b3;
+  }
+  
